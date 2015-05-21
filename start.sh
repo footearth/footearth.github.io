@@ -1,6 +1,6 @@
 #!/bin/bash
 
-app='/root/mooxe-docker-/bin/gitbook.pm2.json'
+app='/root/mooxe-docker-gitbook/bin/gitbook.pm2.json'
 
 /bin/bash /root/.nvm/nvm.sh
 /bin/bash -l -c 'git pull'
