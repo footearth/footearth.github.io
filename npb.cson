@@ -1,0 +1,62 @@
+# PUBLIC CONFIG
+name: 'mooxe-docker-gitbook'
+version: '0.0.0'
+description: 'mooxe-docker-gitbook'
+author: 'FooTearth <footearth@gmail.com>'
+main: 'run.coffee'
+license: 'MIT'
+repository:
+  type: 'git'
+  url: 'https://github.com/Mooxe000/mooxe-docker-gitbook.git'
+bugs:
+  url: 'https://github.com/Mooxe000/mooxe-docker-gitbook/issues'
+homepage: 'https://github.com/Mooxe000/mooxe-docker-gitbook'
+Keywords: [
+  'docker'
+  'daocloud'
+  'gitbook'
+  'blog'
+]
+
+# BOWER CONFIG
+bower:
+  dependencies: []
+  devDependencies: []
+
+# NPM CONFIG
+npm:
+  bin: {}
+  scripts:
+    start: 'pm2 dump && pm2 startOrRestart ./bin/gitbook.pm2.json'
+    stop: 'pm2 kill'
+    restart: 'npm stop; npm start'
+
+    clean: 'rm -rf ./build; rm -rf ./dist'
+    build: 'gitbook build ./src; mv ./src/_book/ ./build'
+    serve: 'hs ./build'
+
+    docker_build: 'docker build --rm -t mooxe/gitbook ./'
+    docker_in: 'docker run -t -i -p 80:3000 mooxe/gitbook /bin/bash/'
+    docker_run: 'docker run -d -p 80:3000 mooxe/gitbook'
+
+    test: ''
+  dependencies: []
+  devDependencies: [
+    'coffee-script'
+    'shelljs'
+    'toa'
+    'toa-static'
+  ]
+
+# NPB CONFIG
+npb:
+
+#  bower:
+#    root_allow: true
+  npm:
+    commander: 'npm' # default
+    # commander: 'cnpm'
+
+# -- build tools --
+#  build: 'gulp'  # default
+#  build: 'grunt'
