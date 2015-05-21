@@ -7,7 +7,7 @@ WORKDIR /root
 RUN \
 
   # npm install
-  /bin/bash -l -c 'cnpm install -g gitbook' && \
+  /bin/bash -l -c 'cnpm install -g gitbook-cli' && \
 
   # git clone
   git clone https://github.com/Mooxe000/mooxe-docker-gitbook.git
