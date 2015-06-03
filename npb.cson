@@ -31,8 +31,8 @@ npm:
     stop: 'pm2 kill'
     restart: 'npm stop; npm start'
 
-    clean: 'rm -rf ./build; rm -rf ./dist'
-    build: 'gitbook build ./src; mv ./src/_book/ ./build'
+    clean: 'rm -rf ./src/_book; rm -rf ./build; rm -rf ./dist'
+    build: 'gitbook build ./src --gitbook=2.1.0; mv ./src/_book/ ./build'
     serve: 'hs ./build'
 
     docker_build: 'docker build --rm -t mooxe/gitbook ./'
