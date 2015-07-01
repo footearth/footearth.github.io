@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>使用 AWS 命令行工具 管理 EC2 | FooTearth&#39;s Blog</title>
+        <title>使用红杏公益代理加速 GITHUB | FooTearth&#39;s Blog</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.1.0">
@@ -25,10 +25,10 @@
         
     
     
-    <link rel="next" href="../201506/use_aws_sdk_to_manage_ec2_server.html" />
+    <link rel="next" href="../Compilers/index.html" />
     
     
-    <link rel="prev" href="../201506/jwt.html" />
+    <link rel="prev" href="../201507/index.html" />
     
 
         
@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="1.4" data-basepath=".." data-revision="Wed Jul 01 2015 17:16:03 GMT+0800 (CST)">
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="Wed Jul 01 2015 17:16:03 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -127,7 +127,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="201506/use_aws_cli_to_manage_ec2_server.html">
+        <li class="chapter " data-level="1.4" data-path="201506/use_aws_cli_to_manage_ec2_server.html">
             
                 
                     <a href="../201506/use_aws_cli_to_manage_ec2_server.html">
@@ -193,7 +193,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1" data-path="201507/git_proxy.html">
+        <li class="chapter active" data-level="2.1" data-path="201507/git_proxy.html">
             
                 
                     <a href="../201507/git_proxy.html">
@@ -355,260 +355,52 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="%E4%BD%BF%E7%94%A8-aws-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7-%E7%AE%A1%E7%90%86-ec2">&#x4F7F;&#x7528; AWS &#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177; &#x7BA1;&#x7406; EC2</h1>
+                        <h1 id="%E4%BD%BF%E7%94%A8%E7%BA%A2%E6%9D%8F%E5%85%AC%E7%9B%8A%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9F-github">&#x4F7F;&#x7528;&#x7EA2;&#x674F;&#x516C;&#x76CA;&#x4EE3;&#x7406;&#x52A0;&#x901F; GITHUB</h1>
+<h2 id="%E7%BA%A2%E6%9D%8F-%E5%85%AC%E7%9B%8A%E4%BB%A3%E7%90%86">&#x7EA2;&#x674F; &#x516C;&#x76CA;&#x4EE3;&#x7406;</h2>
+<p>&#x7EA2;&#x674F; &#x662F; &#x79D1;&#x5B66;&#x4E0A;&#x7F51; &#x5229;&#x5668;&#xFF0C;&#x5927;&#x5BB6;&#x90FD;&#x61C2;&#x7684;&#x3002;
+&#x9ED8;&#x8BA4; &#x53EA;&#x80FD;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x7AEF;&#x8BBF;&#x95EE; &#x88AB;X &#x7F51;&#x7AD9;&#xFF0C;&#x800C;&#x5BF9;&#x4E8E;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x65E0;&#x80FD;&#x4E3A;&#x529B;&#x3002;
+&#x4F5C;&#x8005; &#x63A8;&#x51FA;&#x4E86;&#x4E00;&#x4E2A; &#x516C;&#x76CA;&#x4EE3;&#x7406; &#x4E13;&#x4E3A;&#x5F00;&#x53D1;&#x4EBA;&#x5458; &#x4F7F;&#x7528;&#xFF0C;&#x4E1A;&#x754C;&#x826F;&#x5FC3;&#xFF0C;&#x4F7F;&#x7528; http &#x534F;&#x8BAE;&#x3002;</p>
+<pre><code class="lang-cson"><span class="hljs-attribute">host</span>: hx.gy
+<span class="hljs-attribute">port</span>: <span class="hljs-number">1080</span>
+</code></pre>
+<p>[&#x6211;&#x7684;&#x63A8;&#x5E7F;&#x94FE;&#x63A5;]&#xFF0C;&#x4E00;&#x4E2A;&#x6708; 10 &#x5143; RMB&#xFF0C;&#x5145;&#x503C;&#x540E;&#x5927;&#x5BB6;&#x5404;&#x589E;&#x52A0; 10 &#x5929;&#x4F7F;&#x7528;&#x65F6;&#x957F;&#x3002;</p>
+<h2 id="proxycommand">ProxyCommand</h2>
 <ul>
-<li><a href="https://github.com/aws/aws-cli" target="_blank">GITHUB</a></li>
-<li><a href="http://docs.aws.amazon.com/cli/latest/reference/" target="_blank">doc</a></li>
-<li><a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/index.html" target="_blank">doc.ec2</a></li>
+<li>edit <code>~/.ssh/config</code>, add global proxy command.</li>
 </ul>
-<h3 id="%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8-%E5%91%BD%E4%BB%A4%E8%A1%8C-help-%E8%8E%B7%E5%8F%96%E5%B8%AE%E5%8A%A9">&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; &#x547D;&#x4EE4;&#x884C; help &#x83B7;&#x53D6;&#x5E2E;&#x52A9;</h3>
-<pre><code>aws help
-aws ec2 help
-</code></pre><h2 id="install">Install</h2>
-<pre><code>sudo pip install awscli
-</code></pre><h2 id="config">Config</h2>
-<p>&#x5148;&#x8981;&#x53BB; AWS &#x63A7;&#x5236;&#x53F0; &#x914D;&#x7F6E;&#x4E00;&#x4E0B; <a href="https://console.aws.amazon.com/iam/home" target="_blank">IAM</a> &#x7684;&#x8D26;&#x53F7;&#x548C;&#x6743;&#x9650;</p>
-<p>&#x83B7;&#x53D6; AWS Access Key ID &amp;&amp; AWS Secret Access Key</p>
-<pre><code>aws configure
-----
-AWS Access Key ID: foo
-AWS Secret Access Key: bar
-Default region name [none]: ap-northeast-1
-Default output format [None]: json
-</code></pre><h3 id="about-region">about region</h3>
-<table>
-<thead>
-<tr>
-<th>region name</th>
-<th>area</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ap-northeast-1</td>
-<td>Asia Pacific (Tokyo)</td>
-</tr>
-<tr>
-<td>ap-southeast-1</td>
-<td>Asia Pacific (Singapore)</td>
-</tr>
-<tr>
-<td>ap-southeast-2</td>
-<td>Asia Pacific (Sydney)</td>
-</tr>
-<tr>
-<td>eu-central-1</td>
-<td>EU (Frankfurt)</td>
-</tr>
-<tr>
-<td>eu-west-1</td>
-<td>EU (Ireland)</td>
-</tr>
-<tr>
-<td>sa-east-1</td>
-<td>South America (Sao Paulo)</td>
-</tr>
-<tr>
-<td>us-east-1</td>
-<td>US East (N. Virginia)</td>
-</tr>
-<tr>
-<td>us-west-1</td>
-<td>US West (N. California)</td>
-</tr>
-<tr>
-<td>us-west-2</td>
-<td>US West (Oregon)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="ec2-%E6%94%AF%E6%8C%81%E7%9A%84%E6%93%8D%E4%BD%9C">EC2 &#x652F;&#x6301;&#x7684;&#x64CD;&#x4F5C;</h2>
-<p>accept-vpc-peering-connection
-allocate-address
-assign-private-ip-addresses
-associate-address
-associate-dhcp-options
-associate-route-table
-attach-classic-link-vpc
-attach-internet-gateway
-attach-network-interface
-attach-volume
-attach-vpn-gateway
-authorize-security-group-egress
-authorize-security-group-ingress
-bundle-instance</p>
-<p>cancel-bundle-task
-cancel-conversion-task
-cancel-export-task
-cancel-import-task
-cancel-reserved-instances-listing
-cancel-spot-fleet-requests
-cancel-spot-instance-requests</p>
-<p>confirm-product-instance</p>
-<p>copy-image
-copy-snapshot</p>
-<p>create-customer-gateway
-create-dhcp-options
-create-flow-logs
-create-image
-create-instance-export-task
-create-internet-gateway
-create-key-pair
-create-network-acl
-create-network-acl-entry
-create-network-interface
-create-placement-group
-create-reserved-instances-listing
-create-route
-create-route-table
-create-security-group
-create-snapshot
-create-spot-datafeed-subscription
-create-subnet
-create-tags
-create-volume
-create-vpc
-create-vpc-endpoint
-create-vpc-peering-connection
-create-vpn-connection
-create-vpn-connection-route
-create-vpn-gateway</p>
-<p>delete-customer-gateway
-delete-dhcp-options
-delete-flow-logs
-delete-internet-gateway
-delete-key-pair
-delete-network-acl
-delete-network-acl-entry
-delete-network-interface
-delete-placement-group
-delete-route
-delete-route-table
-delete-security-group
-delete-snapshot
-delete-spot-datafeed-subscription
-delete-subnet
-delete-tags
-delete-volume
-delete-vpc
-delete-vpc-endpoints
-delete-vpc-peering-connection
-delete-vpn-connection
-delete-vpn-connection-route
-delete-vpn-gateway
-deregister-image</p>
-<p>describe-account-attributes
-describe-addresses
-describe-availability-zones
-describe-bundle-tasks
-describe-classic-link-instances
-describe-conversion-tasks
-describe-customer-gateways
-describe-dhcp-options
-describe-export-tasks
-describe-flow-logs
-describe-image-attribute
-describe-images
-describe-import-image-tasks
-describe-import-snapshot-tasks
-describe-instance-attribute
-describe-instance-status
-describe-instances
-describe-internet-gateways
-describe-key-pairs
-describe-moving-addresses
-describe-network-acls
-describe-network-interface-attribute
-describe-network-interfaces
-describe-placement-groups
-describe-prefix-lists
-describe-regions
-describe-reserved-instances
-describe-reserved-instances-listings
-describe-reserved-instances-modifications
-describe-reserved-instances-offerings
-describe-route-tables
-describe-security-groups
-describe-snapshot-attribute
-describe-snapshots
-describe-spot-datafeed-subscription
-describe-spot-fleet-instances
-describe-spot-fleet-request-history
-describe-spot-fleet-requests
-describe-spot-instance-requests
-describe-spot-price-history
-describe-subnets
-describe-tags
-describe-volume-attribute
-describe-volume-status
-describe-volumes
-describe-vpc-attribute
-describe-vpc-classic-link
-describe-vpc-endpoint-services
-describe-vpc-endpoints
-describe-vpc-peering-connections
-describe-vpcs
-describe-vpn-connections
-describe-vpn-gateways</p>
-<p>detach-classic-link-vpc
-detach-internet-gateway
-detach-network-interface
-detach-volume
-detach-vpn-gateway
-disable-vgw-route-propagation
-disable-vpc-classic-link
-disassociate-address
-disassociate-route-table
-enable-vgw-route-propagation
-enable-volume-io
-enable-vpc-classic-link
-get-console-output
-get-password-data
-import-image
-import-key-pair
-import-snapshot
-modify-image-attribute
-modify-instance-attribute
-modify-network-interface-attribute
-modify-reserved-instances
-modify-snapshot-attribute
-modify-subnet-attribute
-modify-volume-attribute
-modify-vpc-attribute
-modify-vpc-endpoint
-monitor-instances
-move-address-to-vpc
-purchase-reserved-instances-offering
-reboot-instances
-register-image
-reject-vpc-peering-connection
-release-address
-replace-network-acl-association
-replace-network-acl-entry
-replace-route
-replace-route-table-association</p>
-<p>report-instance-status</p>
-<p>request-spot-fleet
-request-spot-instances
-reset-image-attribute
-reset-instance-attribute
-reset-network-interface-attribute
-reset-snapshot-attribute
-restore-address-to-classic
-revoke-security-group-egress
-revoke-security-group-ingress
-run-instances
-start-instances
-stop-instances
-terminate-instances
-unassign-private-ip-addresses
-unmonitor-instances</p>
-<p>wait</p>
-<h2 id="codedeploy">Codedeploy</h2>
+<pre><code class="lang-config">HOST *
+  ProxyCommand connect -H hx.gy:1080 %h %p
+</code></pre>
+<h2 id="%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91%E5%B7%A5%E5%85%B7">&#x6D41;&#x91CF;&#x8F6C;&#x53D1;&#x5DE5;&#x5177;</h2>
+<h3 id="connect">connect</h3>
+<p>GITHUB: <a href="https://bitbucket.org/gotoh/connect/wiki/Home" target="_blank">https://bitbucket.org/gotoh/connect/wiki/Home</a></p>
 <ul>
-<li>&#x4E0D;&#x652F;&#x6301;&#x4E1C;&#x4EAC;&#x8282;&#x70B9;</li>
-<li>&#x5BF9;&#x6BD4; ansible</li>
-<li>&#x5BF9;&#x6BD4; docker</li>
+<li>&#x5B89;&#x88C5;</li>
+</ul>
+<pre><code class="lang-bash">$ hg <span class="hljs-built_in">clone</span> ssh://hg@bitbucket.org/gotoh/connect ~/.ssh/connect
+$ <span class="hljs-built_in">cd</span> ~/.ssh/connect
+$ make
+$ cp ./connect /usr/<span class="hljs-built_in">local</span>/connect
+</code></pre>
+<ul>
+<li>&#x4F7F;&#x7528;</li>
+</ul>
+<pre><code class="lang-bash"><span class="hljs-comment"># http</span>
+$ connect -H socks.host:port %h %p
+<span class="hljs-comment"># socks</span>
+$ connect -S socks.host:port %h %p
+</code></pre>
+<h3 id="netcat-nc">netcat (nc)</h3>
+<pre><code class="lang-bash"><span class="hljs-comment"># http</span>
+$ nc -x host:port -X connect %h %p
+<span class="hljs-comment"># socks</span>
+$ nc -x host:port -X <span class="hljs-number">5</span> %h %p
+</code></pre>
+<h2 id="%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
+<ul>
+<li><a href="http://www.jianshu.com/p/2e7088e58ade" target="_blank">npm&#xFF0C;gem&#xFF0C;android sdk&#x52A0;&#x901F;&#x5668;&#x2014;&#x2014;&#x7EA2;&#x674F;&#x516C;&#x76CA;&#x4EE3;&#x7406;</a></li>
+<li><a href="http://segmentfault.com/q/1010000000118837" target="_blank">&#x5982;&#x4F55;&#x4E3A; Git &#x8BBE;&#x7F6E;&#x4EE3;&#x7406;&#xFF1F;</a></li>
+<li><a href="http://localhost:4000/201507/git_proxy.html" target="_blank">SSH via HTTP proxy in OSX</a></li>
 </ul>
 
                     
@@ -620,10 +412,10 @@ unmonitor-instances</p>
         </div>
 
         
-        <a href="../201506/jwt.html" class="navigation navigation-prev " aria-label="Previous page: Json web token (jwt) 介绍"><i class="fa fa-angle-left"></i></a>
+        <a href="../201507/index.html" class="navigation navigation-prev " aria-label="Previous page: 2015.07"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../201506/use_aws_sdk_to_manage_ec2_server.html" class="navigation navigation-next " aria-label="Next page: 使用 aws sdk (node) 管理 EC2"><i class="fa fa-angle-right"></i></a>
+        <a href="../Compilers/index.html" class="navigation navigation-next " aria-label="Next page: 编译原理"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
